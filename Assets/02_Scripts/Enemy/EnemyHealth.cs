@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _hp = 100;
+    
+    // 이벤트 선언
+    public static event Action EnemyDie;
     
     public void TakeDamage(int damage)
     {
@@ -14,6 +18,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        // 이벤트 호출(Raise)
+        EnemyDie?.Invoke();
         Destroy(gameObject);
     }
 }
