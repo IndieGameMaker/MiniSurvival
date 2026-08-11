@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 1692975145785551580}
   - component: {fileID: 7568750863802904700}
   - component: {fileID: 3026635015255895325}
+  - component: {fileID: 8592207092588071301}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -910,9 +911,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3026635015255895325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +929,19 @@ MonoBehaviour:
   _speed: 2
   _target: {fileID: 0}
   _stoppingDistance: 1
+--- !u!114 &8592207092588071301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7656747208784736407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b94c550f0394f5eb847f11c8dd6c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  _hp: 100
 --- !u!1 &7748819697759318762
 GameObject:
   m_ObjectHideFlags: 0
