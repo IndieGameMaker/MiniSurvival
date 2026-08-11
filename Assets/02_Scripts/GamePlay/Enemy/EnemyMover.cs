@@ -31,4 +31,12 @@ public class EnemyMover : MonoBehaviour
         float distance = Vector3.Distance(transform.position, _target.position);
         return distance <= _enemySO.StoppingDistance;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent<PlayerHealth>(out var playerHealth))
+        {
+            playerHealth.TakeDamage(10);
+        }
+    }
 }

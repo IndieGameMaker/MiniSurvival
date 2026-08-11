@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class KillCounter : MonoBehaviour, IEnemyDeathObserver
+public class KillCounter : MonoBehaviour
 {
     [SerializeField] private int _killCount = 0;
 

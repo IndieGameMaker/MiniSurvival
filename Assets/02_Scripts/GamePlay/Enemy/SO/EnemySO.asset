@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EnemySO
   m_EditorClassIdentifier: Enemy::EnemySO
   Speed: 2
-  StoppingDistance: 1
+  StoppingDistance: 0.8
