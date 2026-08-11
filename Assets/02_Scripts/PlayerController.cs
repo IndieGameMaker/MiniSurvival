@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = new Vector3(input.x, 0, input.y);
         
         // 이동 처리 (방향벡터는 정규화)
-        transform.Translate(dir.normalized * _speed * Time.deltaTime);
+        transform.position += dir * (_speed * Time.deltaTime);
         
         // 바라보는 방향으로 회전
         if (dir.sqrMagnitude <= 0.001f) return;
