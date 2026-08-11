@@ -19,7 +19,16 @@ public class PlayerWeapon : MonoBehaviour
         if (target == null) return;
         
         // 총알 발사
+        Fire(target);
         _nextFire = 0;
+    }
+
+    private void Fire(Transform target)
+    {
+        // 발사 방향 계산 
+        Vector3 dir = (target.position - transform.position).normalized;
+        // 총알 생성 
+        Instantiate(_bulletPrefab, transform.position, Quaternion.LookRotation(dir));
     }
 
     private Transform FindEnemy()
