@@ -17,7 +17,6 @@ public class EnemyDeathSubject : MonoBehaviour
         Instance = this;
     }
     
-    
     // 구독 등록
     // 관찰자가 "나도 구독하겠다" 등록하는 메서드
     public void Subscribe(IEnemyDeathObserver observer)
