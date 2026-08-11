@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         // 키보드 값 읽기
         Vector2 input = _moveAction.ReadValue<Vector2>();
-        Debug.Log($"키 입력: {input}");
+        // 2D 입력값을 => Vector3로 변환
+        Vector3 dir = new Vector3(input.x, 0, input.y);
+        
+        // 이동 처리 (방향벡터는 정규화)
+        transform.Translate(dir.normalized * _speed * Time.deltaTime);
     }
 }
