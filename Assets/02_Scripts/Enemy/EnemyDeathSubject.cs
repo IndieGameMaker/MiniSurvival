@@ -10,6 +10,13 @@ public class EnemyDeathSubject : MonoBehaviour
     
     // 관찰자 목록
     private readonly List<IEnemyDeathObserver> _observers = new();
+
+    private void Awake()
+    {
+        // 싱글턴 할당
+        Instance = this;
+    }
+    
     
     // 구독 등록
     // 관찰자가 "나도 구독하겠다" 등록하는 메서드
