@@ -20,4 +20,11 @@ public class PlayerController : MonoBehaviour
     
     // 액션 비활성화
     private void OnDisable() => _moveAction.Disable();
+
+    private void Update()
+    {
+        // 키보드 값 읽기
+        Vector2 input = _moveAction.ReadValue<Vector2>();
+        Debug.Log($"키 입력: {input}");
+    }
 }
