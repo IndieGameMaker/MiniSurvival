@@ -4,6 +4,7 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private float _speed = 2.0f;
     [SerializeField] private Transform _target;
+    [SerializeField] private float _stoppingDistance = 1.0f;
     
     public void SetTarget(Transform target)
     {
@@ -21,4 +22,6 @@ public class EnemyMover : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(dir);
         }
     }
+    
+    
 }
