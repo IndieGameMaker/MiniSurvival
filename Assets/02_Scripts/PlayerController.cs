@@ -30,5 +30,13 @@ public class PlayerController : MonoBehaviour
         
         // 이동 처리 (방향벡터는 정규화)
         transform.Translate(dir.normalized * _speed * Time.deltaTime);
+        
+        // 바라보는 방향으로 회전
+        if (dir.sqrMagnitude <= 0.001f) return;
+        // 바라보는 방향의 벡터를 쿼터니언 타입으로 변환
+        Quaternion target = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation,
+                                target,
+                                Time.deltaTime * _turnSpeed);
     }
 }
