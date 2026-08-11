@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         if (dir.sqrMagnitude <= 0.001f) return;
         // 바라보는 방향의 벡터를 쿼터니언 타입으로 변환
         Quaternion target = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.Slerp(transform.rotation,
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,
                                 target,
                                 Time.deltaTime * _turnSpeed);
     }
