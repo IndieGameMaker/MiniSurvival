@@ -5212,6 +5212,7 @@ GameObject:
   - component: {fileID: 7974258183127965040}
   - component: {fileID: 4066812525298200496}
   - component: {fileID: 7446551014950940944}
+  - component: {fileID: 6376330669007438845}
   m_Layer: 8
   m_Name: Wizard
   m_TagString: Untagged
@@ -5275,6 +5276,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   _speed: 5
   _turnSpeed: 720
+--- !u!114 &6376330669007438845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024783427471904871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942930f0d5b664348b971f3ac9484175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
+  _bulletPrefab: {fileID: 166978578829165401, guid: b91f351cd1d634bcfa075b99a1ac6d46, type: 3}
+  _fireRate: 0.5
 --- !u!1 &1086153114082174936
 GameObject:
   m_ObjectHideFlags: 0

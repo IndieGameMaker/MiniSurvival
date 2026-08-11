@@ -36,7 +36,7 @@ public class PlayerWeapon : MonoBehaviour
         EnemyHealth[] enemies = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
 
         Transform nearest = null;
-        float nearestDist = 0f;
+        float nearestDist = 5f * 5f;
         
         foreach (var enemy in enemies)
         {
