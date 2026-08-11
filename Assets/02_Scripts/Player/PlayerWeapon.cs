@@ -25,6 +25,7 @@ public class PlayerWeapon : MonoBehaviour
 
         Transform nearest = null;
         float nearestDist = 0f;
+        
         foreach (var enemy in enemies)
         {
             // 거리 비교 (두좌표간의 거리) Vector3.Distance (A, B)
