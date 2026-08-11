@@ -926,9 +926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823a7b0ee51a047e38ee0729bba44cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMover
-  _speed: 2
+  _enemySO: {fileID: 11400000, guid: 891754b4bc1a74809bce935fc8c29e71, type: 2}
   _target: {fileID: 0}
-  _stoppingDistance: 1
 --- !u!114 &8592207092588071301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   _hp: 100
+  _eventChannel: {fileID: 11400000, guid: f5410044fd66e474c878f3485ce15963, type: 2}
 --- !u!1 &7748819697759318762
 GameObject:
   m_ObjectHideFlags: 0

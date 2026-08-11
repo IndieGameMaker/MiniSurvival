@@ -625,6 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1254954070}
   - component: {fileID: 1254954069}
+  - component: {fileID: 1254954071}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -639,7 +640,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254954068}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae24b7c8c47d542eb8abcdfdcc76e402, type: 3}
   m_Name: 
@@ -660,6 +661,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1254954071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254954068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4272d6e72dc4115ae0af464e9d6295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UI::KillCounterView
+  _enemyDieEventChannel: {fileID: 11400000, guid: f5410044fd66e474c878f3485ce15963, type: 2}
 --- !u!1001 &1337999090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1102,67 +1116,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b91f351cd1d634bcfa075b99a1ac6d46, type: 3}
---- !u!1001 &8534380039721222816
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143550651632663392, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026635015255895325, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 2622389166551171008}
-    - target: {fileID: 7656747208784736407, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1172,7 +1125,6 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1965756270}
   - {fileID: 535330820739704281}
-  - {fileID: 8534380039721222816}
   - {fileID: 905895125}
   - {fileID: 643646101}
   - {fileID: 1916417717}
