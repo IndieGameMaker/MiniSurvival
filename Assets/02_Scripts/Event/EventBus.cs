@@ -46,7 +46,7 @@ public static class EventBus
     {
         if (_handlers.TryGetValue(typeof(T), out var existing))
         {
-            
+            (existing as Action<T>)?.Invoke(gameEvent);
         }
     }
 }

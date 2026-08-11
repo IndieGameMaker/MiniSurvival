@@ -22,7 +22,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         // EnemyDie?.Invoke();
         
         // 모든 옵저버에게 알림요청
-        EnemyDeathSubject.Instance.Notify();
+        // EnemyDeathSubject.Instance.Notify();
+        
+        EventBus.Publish(new EnemyDieEvent
+        {
+            RemainingEnemies = 10,
+            ScoreReward = 100
+        });
         Destroy(gameObject);
     }
 }
