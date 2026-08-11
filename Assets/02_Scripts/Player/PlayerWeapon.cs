@@ -15,7 +15,10 @@ public class PlayerWeapon : MonoBehaviour
         if (_nextFire < _fireRate) return;
         
         // 가장 가까운 적 검색
+        Transform target = FindEnemy();
+        if (target == null) return;
         
+        // 총알 발사
         _nextFire = 0;
     }
 
