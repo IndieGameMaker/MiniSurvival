@@ -17,4 +17,7 @@ public class PlayerController : MonoBehaviour
         // 액션 활성화
         _moveAction.Enable();
     }
+    
+    // 액션 비활성화
+    private void OnDisable() => _moveAction.Disable();
 }
