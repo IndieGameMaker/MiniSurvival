@@ -19,7 +19,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private void Die()
     {
         // 이벤트 호출(Raise)
-        EnemyDie?.Invoke();
+        // EnemyDie?.Invoke();
+        
+        // 모든 옵저버에게 알림요청
+        EnemyDeathSubject.Instance.Notify();
         Destroy(gameObject);
     }
 }
