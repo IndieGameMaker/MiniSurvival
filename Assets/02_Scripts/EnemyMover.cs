@@ -15,6 +15,8 @@ public class EnemyMover : MonoBehaviour
     {
         if (_target != null)
         {
+            if (IsStoppingDistance()) return;
+            
             // 방향 계산 : 벡터의 뺄셈 연산(A - B)
             Vector3 dir = (_target.position - transform.position).normalized;
             
@@ -22,6 +24,10 @@ public class EnemyMover : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(dir);
         }
     }
-    
-    
+
+    private bool IsStoppingDistance()
+    {
+        float distance = Vector3.Distance(transform.position, _target.position);
+        return distance <= _stoppingDistance;
+    }
 }
