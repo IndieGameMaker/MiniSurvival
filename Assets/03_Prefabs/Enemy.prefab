@@ -927,6 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMover
   _speed: 2
   _target: {fileID: 0}
+  _stoppingDistance: 1
 --- !u!1 &7748819697759318762
 GameObject:
   m_ObjectHideFlags: 0
