@@ -5,8 +5,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _hp = 100;
     
+    // ScriptableObject Event 할당
+    [SerializeField] private EnemyDieEventChannel _enemyDieEventChannel;
+    
     // 이벤트 선언
-    public static event Action EnemyDie;
+    // public static event Action EnemyDie;
     
     public void TakeDamage(int damage)
     {
@@ -18,17 +21,28 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        // 이벤트 호출(Raise)
+        // 1. 이벤트 호출(Raise)
         // EnemyDie?.Invoke();
         
-        // 모든 옵저버에게 알림요청
+        // 2. 모든 옵저버에게 알림요청
         // EnemyDeathSubject.Instance.Notify();
         
-        EventBus.Publish(new EnemyDieEvent
+        // 3. C# Native EventBus Pattern
+        // EventBus.Publish(new EnemyDieEvent
+        // {
+        //     RemainingEnemies = 10,
+        //     ScoreReward = 100
+        // });
+        
+        // 4. ScriptableObject EventChannel(EventBus)
+        // 발행자 (Subject, Publisher)
+        _enemyDieEventChannel.Raise(new EnemyDieEvent
         {
             RemainingEnemies = 10,
-            ScoreReward = 100
+            ScoreReward = 200
         });
+        
+        
         Destroy(gameObject);
     }
 }

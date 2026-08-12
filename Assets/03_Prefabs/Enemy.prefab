@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   _hp: 100
+  _enemyDieEventChannel: {fileID: 11400000, guid: 832186a0db9c6423e94fde68a961c746, type: 2}
 --- !u!1 &7748819697759318762
 GameObject:
   m_ObjectHideFlags: 0
