@@ -482,6 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b414dc3076ecd4b6aaa56abfee400ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GamePlay::WaveManager
+  _totalWaves: 3
+  _interval: 2
 --- !u!4 &794766617
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,6 +1074,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1024783427471904871, guid: 470df788e05bf4bc8a431dde21af9c6c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2622389166551171014}
+    - targetCorrespondingSourceObject: {fileID: 1024783427471904871, guid: 470df788e05bf4bc8a431dde21af9c6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2622389166551171015}
   m_SourcePrefab: {fileID: 100100000, guid: 470df788e05bf4bc8a431dde21af9c6c, type: 3}
 --- !u!4 &2622389166551171008 stripped
 Transform:
@@ -1141,6 +1146,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GamePlay::PlayerHealth
   OnHpChanged: {fileID: 11400000, guid: 75021de980cf74c9fa84d847d8a2bbc2, type: 2}
+--- !u!114 &2622389166551171015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735961677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba13fd1e66be4bdfa32f1c3d35891f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GamePlay::PlayerRespawn
 --- !u!1001 &7300853525634476118
 PrefabInstance:
   m_ObjectHideFlags: 0
