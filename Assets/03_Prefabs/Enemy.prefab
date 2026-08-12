@@ -926,9 +926,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823a7b0ee51a047e38ee0729bba44cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMover
-  _speed: 2
+  _enemyDataSO: {fileID: 11400000, guid: cde9a37020760466db58ffacdc3e9594, type: 2}
   _target: {fileID: 0}
-  _stoppingDistance: 1
 --- !u!114 &8592207092588071301
 MonoBehaviour:
   m_ObjectHideFlags: 0
