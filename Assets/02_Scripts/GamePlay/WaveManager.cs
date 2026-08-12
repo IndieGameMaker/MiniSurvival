@@ -9,6 +9,16 @@ using UnityEngine.InputSystem;
  * 
  */
 
+// Un Managed Language C, C++ : 메모리 할당과 해제를 개발자
+// Managed Language Java, C# : 메모리 해제를 시스템이 자동으로 처리 Garbage Collection (GC)
+
+/*
+ * Thread.Sleep(1000)  : Blocking 동기
+ * async/await         : Non-Blocking 비동기 , C# 표준 비동기 방식
+ * Unity Coroutine : 비동기 처럼 유니티엔진만의 방법, GC
+ */
+
+
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private int _totalWaves = 3; // 총 웨이브 카운트
