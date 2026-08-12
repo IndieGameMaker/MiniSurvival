@@ -1005,6 +1005,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1024783427471904871, guid: 470df788e05bf4bc8a431dde21af9c6c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2622389166551171012}
+    - targetCorrespondingSourceObject: {fileID: 1024783427471904871, guid: 470df788e05bf4bc8a431dde21af9c6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2622389166551171014}
   m_SourcePrefab: {fileID: 100100000, guid: 470df788e05bf4bc8a431dde21af9c6c, type: 3}
 --- !u!4 &2622389166551171008 stripped
 Transform:
@@ -1061,6 +1064,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2622389166551171014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735961677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebfec9965ac74b0baed5169f84079ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GamePlay::PlayerHealth
+  OnHpChanged: {fileID: 11400000, guid: 75021de980cf74c9fa84d847d8a2bbc2, type: 2}
 --- !u!1001 &7300853525634476118
 PrefabInstance:
   m_ObjectHideFlags: 0
