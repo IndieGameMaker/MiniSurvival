@@ -14,6 +14,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        
+        _currentHp = Mathf.Max(0, _currentHp - damage); // 최소값 제한
+        // 이벤트 발행 요청
+        OnHpChanged.Raise(_currentHp);
+        Debug.Log($"법사 피격: HP:{_currentHp}");
     }
 }

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    // [SerializeField] private float _speed = 2.0f;
-    // [SerializeField] private float _stoppingDistance = 1.0f;
     // 스크립터블 오브젝트 참조를 위한 변수
     [SerializeField] private EnemyDataSO _enemyDataSO;
     [SerializeField] private Transform _target;
@@ -31,5 +29,18 @@ public class EnemyMover : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, _target.position);
         return distance <= _enemyDataSO.StoppingDistance;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent<PlayerHealth>(out var playerHealth))
+        {
+            playerHealth.TakeDamage(10);
+        }
+        
+        // if (other.CompareTag("Player"))
+        // {
+        //     GetComponent<PlayerHealth>().TakeDamage(10);
+        // }
     }
 }
