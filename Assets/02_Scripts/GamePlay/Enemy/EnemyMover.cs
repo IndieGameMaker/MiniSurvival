@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private float _speed = 2.0f;
+    // [SerializeField] private float _speed = 2.0f;
+    // [SerializeField] private float _stoppingDistance = 1.0f;
+    // 스크립터블 오브젝트 참조를 위한 변수
+    [SerializeField] private EnemyDataSO _enemyDataSO;
     [SerializeField] private Transform _target;
-    [SerializeField] private float _stoppingDistance = 1.0f;
     
     public void SetTarget(Transform target)
     {
@@ -20,7 +22,7 @@ public class EnemyMover : MonoBehaviour
             // 방향 계산 : 벡터의 뺄셈 연산(A - B)
             Vector3 dir = (_target.position - transform.position).normalized;
             
-            transform.position += dir * _speed * Time.deltaTime;
+            transform.position += dir * _enemyDataSO.Speed * Time.deltaTime;
             transform.rotation = Quaternion.LookRotation(dir);
         }
     }
@@ -28,6 +30,6 @@ public class EnemyMover : MonoBehaviour
     private bool IsStoppingDistance()
     {
         float distance = Vector3.Distance(transform.position, _target.position);
-        return distance <= _stoppingDistance;
+        return distance <= _enemyDataSO.StoppingDistance;
     }
 }
