@@ -22,7 +22,20 @@ public class WaveManagerAsync : MonoBehaviour
 
     private async Task RunWaveAsync()
     {
-        
+        for (int i = 0; i < _totalWaves; i++)
+        {
+            SpawnWave(i);
+            
+            // 인터벌 시간동안 대기 (비동기)
+            // 밀리세컨드 (1000 => 1초)
+            // Time.timeScale = 0 무시
+            // 코루틴의 new WaitForSecond(_interval);
+            await Task.Delay((int)(_interval * 1000));
+        }
+
+        Debug.Log("[Task] 모든 웨이브 종료");
     }
-    
+
+    private void SpawnWave(int i)
+        => Debug.Log($"Spawn Wave {i}");
 }
