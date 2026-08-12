@@ -1,0 +1,16 @@
+{
+    "name": "UIAsmd",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4a3735463e3eb46959d8ce6343476c8c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

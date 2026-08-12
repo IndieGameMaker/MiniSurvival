@@ -1,0 +1,16 @@
+{
+    "name": "SoundAsmd",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6e492ef37029d4a54ac6e81adb0d7497"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
