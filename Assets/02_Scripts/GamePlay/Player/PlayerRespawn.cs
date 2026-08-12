@@ -17,7 +17,7 @@ public class PlayerRespawn : MonoBehaviour
     
     public void BeginRespawn()
     {
-        
+        StartCoroutine(Respawn());
     }
 
     private IEnumerator Respawn()
