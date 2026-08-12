@@ -12,6 +12,11 @@ public class GameInit : MonoBehaviour
         Task task1 = LoadSaveDataAsync();
         Task task2 = LoadGameConfigAsync();
         Task task3 = SetObjectPoolAsync();
+        
+        // Task.WhenAll 동시에 작업을 시작하고 비동기로 대기
+        await Task.WhenAll(task1, task2, task3);
+        
+        Debug.Log("초기화 완료!");
     }
 
     private async Task LoadSaveDataAsync()
