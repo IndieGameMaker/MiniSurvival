@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 /* async / await / Task
@@ -9,15 +11,18 @@ using UnityEngine;
 
 public class WaveManagerAsync : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private int _totalWaves = 3;
+    [SerializeField] private float _interval = 2f;
+    
+    private async void Start()
     {
-        
+        await RunWaveAsync(); // 비동기 방식 (Non Blocking)
+        Debug.Log("웨이브 시작!");
     }
 
-    // Update is called once per frame
-    void Update()
+    private async Task RunWaveAsync()
     {
         
     }
+    
 }
