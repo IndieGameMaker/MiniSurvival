@@ -11,15 +11,30 @@ using UnityEngine.InputSystem;
 
 public class WaveManager : MonoBehaviour
 {
+    [SerializeField] private int _totalWaves = 3; // 총 웨이브 카운트
+    [SerializeField] private float _interval = 2f; // 웨이브간 대기 시간
+    
     private void Start()
     {
-        StartCoroutine(RespawnPlayer());
+        StartCoroutine(RunWave());
     }
 
-    private void Update()
+    private IEnumerator RunWave()
     {
-        Debug.Log(Time.time);
+        // while, for, foreach 반복문을 사용하는 코루틴의 경우 해단 반복문안에 반드시 yield 포함
+        for (int i = 0; i < _totalWaves; i++)
+        {
+            // 스폰 처리
+            SpawnWave(i);
+            yield return new WaitForSeconds(_interval);
+        }
     }
+
+    private void SpawnWave(int waveIndex)
+    {
+        Debug.Log($"웨이브 {waveIndex} 소환");
+    }
+    
     
     // 코루틴은 병렬처리를 위한 유니티 엔진 자체의 방법
     // 멀티스레가 아님, 싱글 스레드 에서 동작
