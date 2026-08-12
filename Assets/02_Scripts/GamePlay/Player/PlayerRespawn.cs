@@ -26,5 +26,19 @@ public class PlayerRespawn : MonoBehaviour
         
         // 3초 대기
         yield return _wait;
+        Debug.Log("주인공 부활");
+        // 무적모드 진입 요청
+        yield return StartCoroutine(GodMode());
+    }
+    
+    // 무적 모드 코루틴
+    private IEnumerator GodMode()
+    {
+        _isGodMode = true;
+        Debug.Log("무적 상태 진입...");
+        yield return new WaitForSeconds(2.0f);
+
+        _isGodMode = false;
+        Debug.Log("무적 상태 해제...");
     }
 }
