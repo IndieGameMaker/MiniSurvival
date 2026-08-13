@@ -29,6 +29,20 @@ public class SimpleJob : MonoBehaviour
         }
     }
 
+    [SerializeField] private int _count = 1_000_000;
+    private NativeArray<float> _datas;
+    private struct SqrtJob : IJobFor
+    {
+        public NativeArray<float> Input;
+        
+        public void Execute(int index)
+        {
+            float v = Input[index];
+            Input[index] = Mathf.Sqrt(v) + Mathf.Sin(v);
+        }
+    }
+    
+
     private void Start()
     {
         // 데이터를 준비
@@ -37,7 +51,12 @@ public class SimpleJob : MonoBehaviour
         // Allocator.TempJob
         // Allocator.Persistent
         
-        // 네이티브배열 초기환
+        // 2. IJobFor
+        _datas = new NativeArray<float>(_count, Allocator.Persistent);
+        for (int i = 0; i < _count; i++) _datas[i] = i;
+        
+        
+        // 1. 네이티브배열 초기환
         var input = new NativeArray<float>(10, Allocator.TempJob);
         var result = new NativeArray<float>(1, Allocator.TempJob);
 
@@ -53,6 +72,8 @@ public class SimpleJob : MonoBehaviour
         // 2. 잡 예약 (Job Queue)
         JobHandle handle = job.Schedule();
         
+        // 2-1. 메인스레드에서 작업을 진행....
+        
         // 3. 완료 대기 - 끝나기를 기다린다.
         handle.Complete();
         
@@ -64,5 +85,11 @@ public class SimpleJob : MonoBehaviour
         result.Dispose();
         
         Debug.LogError("정지");
+    }
+
+    private void Update()
+    {
+        var sqrtJob = new SqrtJob { Input = _datas };
+        sqrtJob.Schedule(_count, default).Complete();
     }
 }
