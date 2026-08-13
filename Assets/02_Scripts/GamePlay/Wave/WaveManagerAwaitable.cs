@@ -7,7 +7,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 // Multi-Thread 처리를 안전하게 하기위한 유니티고유 기능
 // - Race Condition : 공유 객체 동시 접근
 // - Dead Lock : 
-// - 오류가 발생했을 때 동일한 재현 부가능
+// - 오류가 발생했을 때 동일한 재현 불가능
 
 // JobSystem + Burst Compiler
 
