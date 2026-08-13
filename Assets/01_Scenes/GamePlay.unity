@@ -509,7 +509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: GamePlay::WaveManagerAwaitable
   _totalWaves: 3
   _interval: 5
-  _enemyPrefab: {fileID: 7656747208784736407, guid: 4c9ab296efe2a4a7f9a16766a70e9da9, type: 3}
+  _enemyPrefab: {fileID: 0}
+  _enemyAddr: Enemy
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

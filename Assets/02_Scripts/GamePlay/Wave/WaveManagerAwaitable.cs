@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.AddressableAssets;
@@ -35,8 +36,14 @@ public class WaveManagerAwaitable : MonoBehaviour
         playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         await RunWaveAsync();
     }
-    
-    
+
+    private void OnDestroy()
+    {
+        if (_handle.IsValid()) 
+        {
+            Addressables.Release(_handle); // 로드한 에셋을 해제 (누수 방지)
+        }
+    }
 
     private async Awaitable RunWaveAsync()
     {
