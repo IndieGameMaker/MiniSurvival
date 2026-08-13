@@ -1,3 +1,4 @@
+using Unity.Burst;
 using UnityEngine;
 using Unity.Collections; // NatviveArray, Alloctor
 using Unity.Jobs;
@@ -31,6 +32,8 @@ public class SimpleJob : MonoBehaviour
 
     [SerializeField] private int _count = 1_000_000;
     private NativeArray<float> _datas;
+    
+    [BurstCompile]
     private struct SqrtJob : IJobFor
     {
         public NativeArray<float> Input;
@@ -90,6 +93,7 @@ public class SimpleJob : MonoBehaviour
     private void Update()
     {
         var sqrtJob = new SqrtJob { Input = _datas };
-        sqrtJob.Schedule(_count, default).Complete();
+        // (반복횟수, 배치사이즈, 선행Job)
+        sqrtJob.ScheduleParallel(_count,64, default).Complete();
     }
 }
