@@ -1,7 +1,9 @@
 {
-    "name": "Core",
+    "name": "UIAssem",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:c382ff9037be84f1996f9a133d5603bc"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

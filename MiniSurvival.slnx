@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Project Path="GamePlayAssem.csproj" />
+  <Project Path="CoreAssem.csproj" />
+  <Project Path="UIAssem.csproj" />
+  <Project Path="SoundAssem.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>
