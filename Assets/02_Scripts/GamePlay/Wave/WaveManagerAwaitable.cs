@@ -8,8 +8,11 @@ public class WaveManagerAwaitable : MonoBehaviour
 
     [SerializeField] private GameObject _enemyPrefab;
 
+    private Transform playerTr;
+    
     private async Awaitable Start()
     {
+        playerTr = GameObject.FindGameObjectWithTag("Player").transform;
         await RunWaveAsync();
     }
 
@@ -30,7 +33,8 @@ public class WaveManagerAwaitable : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             Vector3 pos = new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
-            Instantiate(_enemyPrefab, pos, Quaternion.identity);
+            var enemy = Instantiate(_enemyPrefab, pos, Quaternion.identity);
+            enemy.GetComponent<EnemyMover>().SetTarget(playerTr);
         }
         
         Debug.Log($"[Awaitable] 웨이브 실행 {waveCount}");
