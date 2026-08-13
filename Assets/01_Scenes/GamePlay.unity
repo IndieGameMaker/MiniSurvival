@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 794766617}
   - component: {fileID: 794766616}
   - component: {fileID: 794766618}
+  - component: {fileID: 794766619}
   m_Layer: 0
   m_Name: Wave Manager
   m_TagString: Untagged
@@ -507,11 +508,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794766615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3803533c1100497b9ee762b36df1b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GamePlay::WaveManagerAsync
+  _totalWaves: 3
+  _interval: 2
+--- !u!114 &794766619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794766615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87466a889e7bf40539b534e11e60168a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GamePlay::WaveManagerAwaitable
   _totalWaves: 3
   _interval: 2
 --- !u!1 &832575517

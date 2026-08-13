@@ -31,7 +31,7 @@ public class HeavyJob : MonoBehaviour
     {
         long result = 0;
 
-        for (int i = 0; i < 20_000_000; i++)
+        for (int i = 0; i < 50_000_000; i++)
         {
             result += i % 5;
         }
