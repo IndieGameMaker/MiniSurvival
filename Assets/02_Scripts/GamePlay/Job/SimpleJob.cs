@@ -2,6 +2,7 @@ using Unity.Burst;
 using UnityEngine;
 using Unity.Collections; // NatviveArray, Alloctor
 using Unity.Jobs;
+using Unity.Mathematics;
 
 /*
  * IJob
@@ -34,14 +35,14 @@ public class SimpleJob : MonoBehaviour
     private NativeArray<float> _datas;
     
     [BurstCompile]
-    private struct SqrtJob : IJobFor
+    private struct SqrtJob : IJobParallelFor
     {
         public NativeArray<float> Input;
         
         public void Execute(int index)
         {
             float v = Input[index];
-            Input[index] = Mathf.Sqrt(v) + Mathf.Sin(v);
+            Input[index] = math.sqrt(v) + math.sin(v);
         }
     }
     
@@ -87,13 +88,13 @@ public class SimpleJob : MonoBehaviour
         input.Dispose();
         result.Dispose();
         
-        Debug.LogError("정지");
+        Debug.Log("정지");
     }
 
     private void Update()
     {
         var sqrtJob = new SqrtJob { Input = _datas };
         // (반복횟수, 배치사이즈, 선행Job)
-        sqrtJob.ScheduleParallel(_count,64, default).Complete();
+        sqrtJob.Schedule(_count, 128).Complete();
     }
 }
